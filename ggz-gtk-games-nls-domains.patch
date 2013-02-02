@@ -1,0 +1,198 @@
+--- ggz-gtk-games-0.0.14.1/spades/client_main.c.orig	2008-01-05 19:59:38.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/spades/client_main.c	2013-02-02 17:43:38.882460076 +0100
+@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
+ 
+ 	initialize_debugging();
+ 
+-	ggz_intl_init("spades");
++	ggz_intl_init("ggz-spades");
+ 
+ 	/* Arrange interrupts to terminate */
+ 	signal(SIGINT, die);
+--- ggz-gtk-games-0.0.14.1/po/spades/Makefile.am.orig	2008-01-05 19:59:50.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/po/spades/Makefile.am	2013-02-02 17:34:57.109137620 +0100
+@@ -2,7 +2,7 @@ SUBDIRS = .
+ 
+ EXTRA_DIST = spades.pot de.po
+ 
+-CATALOG = spades
++CATALOG = ggz-spades
+ POSOURCES = $(top_srcdir)/spades/*.c
+ 
+ include $(top_srcdir)/m4/i18n.mk
+--- ggz-gtk-games-0.0.14.1/po/common/Makefile.am.orig	2008-01-05 19:59:50.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/po/common/Makefile.am	2013-02-02 17:34:18.282471763 +0100
+@@ -2,7 +2,7 @@ SUBDIRS = .
+ 
+ EXTRA_DIST = common.pot de.po
+ 
+-CATALOG = common
++CATALOG = ggz-common
+ POSOURCES = $(top_srcdir)/common/*.c $(top_srcdir)/common/*.h
+ 
+ include $(top_srcdir)/m4/i18n.mk
+--- ggz-gtk-games-0.0.14.1/po/reversi/Makefile.am.orig	2008-01-05 19:59:50.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/po/reversi/Makefile.am	2013-02-02 17:34:46.725804500 +0100
+@@ -2,7 +2,7 @@ SUBDIRS = .
+ 
+ EXTRA_DIST = reversi.pot de.po
+ 
+-CATALOG = reversi
++CATALOG = ggz-reversi
+ POSOURCES = $(top_srcdir)/reversi/*.c
+ 
+ include $(top_srcdir)/m4/i18n.mk
+--- ggz-gtk-games-0.0.14.1/po/chinese-checkers/Makefile.am.orig	2008-01-05 19:59:50.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/po/chinese-checkers/Makefile.am	2013-02-02 17:33:53.955805601 +0100
+@@ -2,7 +2,7 @@ SUBDIRS = .
+ 
+ EXTRA_DIST = chinese-checkers.pot de.po
+ 
+-CATALOG = chinese-checkers
++CATALOG = ggz-chinese-checkers
+ POSOURCES = $(top_srcdir)/chinese-checkers/*.c
+ 
+ include $(top_srcdir)/m4/i18n.mk
+--- ggz-gtk-games-0.0.14.1/po/combat/Makefile.am.orig	2008-01-05 19:59:50.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/po/combat/Makefile.am	2013-02-02 17:34:10.959138580 +0100
+@@ -2,7 +2,7 @@ SUBDIRS = .
+ 
+ EXTRA_DIST = combat.pot de.po
+ 
+-CATALOG = combat
++CATALOG = ggz-combat
+ POSOURCES = $(top_srcdir)/combat/*.c
+ 
+ include $(top_srcdir)/m4/i18n.mk
+--- ggz-gtk-games-0.0.14.1/po/dots/Makefile.am.orig	2008-01-05 19:59:50.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/po/dots/Makefile.am	2013-02-02 17:34:25.842471605 +0100
+@@ -2,7 +2,7 @@ SUBDIRS = .
+ 
+ EXTRA_DIST = dots.pot de.po
+ 
+-CATALOG = dots
++CATALOG = ggz-dots
+ POSOURCES = $(top_srcdir)/dots/*.c
+ 
+ include $(top_srcdir)/m4/i18n.mk
+--- ggz-gtk-games-0.0.14.1/po/hastings/Makefile.am.orig	2008-01-05 19:59:50.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/po/hastings/Makefile.am	2013-02-02 17:34:38.432471343 +0100
+@@ -2,7 +2,7 @@ SUBDIRS = .
+ 
+ EXTRA_DIST = hastings.pot de.po
+ 
+-CATALOG = hastings
++CATALOG = ggz-hastings
+ POSOURCES = $(top_srcdir)/hastings/*.c
+ 
+ include $(top_srcdir)/m4/i18n.mk
+--- ggz-gtk-games-0.0.14.1/po/tictactoe/Makefile.am.orig	2008-01-05 19:59:50.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/po/tictactoe/Makefile.am	2013-02-02 17:35:06.075804100 +0100
+@@ -2,7 +2,7 @@ SUBDIRS = .
+ 
+ EXTRA_DIST = tictactoe.pot de.po
+ 
+-CATALOG = tictactoe
++CATALOG = ggz-tictactoe
+ POSOURCES = $(top_srcdir)/tictactoe/*.c
+ 
+ include $(top_srcdir)/m4/i18n.mk
+--- ggz-gtk-games-0.0.14.1/po/chess/Makefile.am.orig	2008-01-05 19:59:50.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/po/chess/Makefile.am	2013-02-02 17:33:41.719139190 +0100
+@@ -2,7 +2,7 @@ SUBDIRS = .
+ 
+ EXTRA_DIST = chess.pot de.po
+ 
+-CATALOG = chess
++CATALOG = ggz-chess
+ POSOURCES = $(top_srcdir)/chess/*.c
+ 
+ include $(top_srcdir)/m4/i18n.mk
+--- ggz-gtk-games-0.0.14.1/common/ggzintl.c.orig	2008-01-05 19:59:42.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/common/ggzintl.c	2013-02-02 17:42:31.685794807 +0100
+@@ -32,7 +32,7 @@
+ 
+ #include "ggzintl.h"
+ 
+-#define COMMON_DOMAIN "common"
++#define COMMON_DOMAIN "ggz-common"
+ 
+ void ggz_intl_init(const char *modulename)
+ {
+--- ggz-gtk-games-0.0.14.1/reversi/main.c.orig	2008-01-05 19:59:37.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/reversi/main.c	2013-02-02 17:43:25.502460355 +0100
+@@ -107,7 +107,7 @@ static gboolean game_handle_io(GGZMod *
+ int main(int argc, char *argv[])
+ {
+ 
+-	ggz_intl_init("reversi");
++	ggz_intl_init("ggz-reversi");
+ 	initialize_debugging();
+ 	load_data();	/* This must come before create_main_win() */
+ 
+--- ggz-gtk-games-0.0.14.1/chinese-checkers/main.c.orig	2008-01-05 19:59:45.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/chinese-checkers/main.c	2013-02-02 17:41:53.572462272 +0100
+@@ -58,7 +58,7 @@ static int get_sync_data(void);
+ int main(int argc, char *argv[])
+ {
+ 	initialize_debugging();
+-	ggz_intl_init("chinese-checkers");
++	ggz_intl_init("ggz-chinese-checkers");
+ 
+ 	gtk_init(&argc, &argv);
+ 	initialize_about_dialog();
+--- ggz-gtk-games-0.0.14.1/combat/main.c.orig	2008-01-05 19:59:48.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/combat/main.c	2013-02-02 17:42:05.085795369 +0100
+@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
+ 
+ 	initialize_debugging();
+ 
+-	ggz_intl_init("combat");
++	ggz_intl_init("ggz-combat");
+ 
+ 	gtk_init(&argc, &argv);
+ 	init_about_dialog();
+--- ggz-gtk-games-0.0.14.1/dots/main.c.orig	2008-01-05 19:59:50.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/dots/main.c	2013-02-02 17:42:52.095794385 +0100
+@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
+ 
+ 	initialize_debugging();
+ 
+-	ggz_intl_init("dots");
++	ggz_intl_init("ggz-dots");
+ 
+ 	gtk_init(&argc, &argv);
+ 	initialize_about_dialog();
+--- ggz-gtk-games-0.0.14.1/hastings/main.c.orig	2008-01-05 19:59:41.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/hastings/main.c	2013-02-02 17:43:08.399127379 +0100
+@@ -68,7 +68,7 @@ static GGZMod *mod;
+ int main(int argc, char *argv[])
+ {
+ 	initialize_debugging();
+-	ggz_intl_init("hastings");
++	ggz_intl_init("ggz-hastings");
+ 
+ 	gtk_init(&argc, &argv);
+ 	initialize_about_dialog();
+--- ggz-gtk-games-0.0.14.1/tictactoe/main.c.orig	2008-01-05 19:59:38.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/tictactoe/main.c	2013-02-02 17:43:53.362459775 +0100
+@@ -54,7 +54,7 @@ static void initialize_about_dialog(void
+ 
+ int main(int argc, char *argv[])
+ {
+-	ggz_intl_init("tictactoe");
++	ggz_intl_init("ggz-tictactoe");
+ 
+ 	gtk_init(&argc, &argv);
+ 	initialize_about_dialog();
+--- ggz-gtk-games-0.0.14.1/chess/main.c.orig	2008-01-05 19:59:49.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/chess/main.c	2013-02-02 17:40:33.309130614 +0100
+@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
+ {
+ 	initialize_debugging();
+ 
+-	ggz_intl_init("chess");
++	ggz_intl_init("ggz-chess");
+ 
+ 	gtk_init(&argc, &argv);
+ 	initialize_about_dialog();
