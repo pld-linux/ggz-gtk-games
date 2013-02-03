@@ -2,7 +2,7 @@ Summary:	GNOME core client for GGZ
 Summary(pl.UTF-8):	Klient GGZ dla środowiska GNOME
 Name:		ggz-gtk-games
 Version:	0.0.14.1
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://mirrors.dotsrc.org/ggzgamingzone/ggz/%{version}/%{name}-%{version}.tar.gz
@@ -63,13 +63,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 for d in chess chinese-checkers combat dots ggzcards hastings reversi spades tictactoe ; do
-	%{_bindir}/ggz-config --install --modfile=%{_datadir}/ggz/ggz-config/${d}.dsc
+	%{_bindir}/ggz-config --install --modfile=%{_datadir}/ggz/ggz-config/${d}.dsc --force
 done
 
 %preun
 if [ "$1" = "0" ]; then
 	for d in chess chinese-checkers combat dots ggzcards hastings reversi spades tictactoe ; do
-		%{_bindir}/ggz-config --install --modfile=%{_datadir}/ggz/ggz-config/${d}.dsc
+		%{_bindir}/ggz-config --remove --modfile=%{_datadir}/ggz/ggz-config/${d}.dsc
 	done
 fi
 
