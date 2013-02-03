@@ -8,6 +8,7 @@ Group:		X11/Applications/Games
 Source0:	http://mirrors.dotsrc.org/ggzgamingzone/ggz/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	72049279f3f2d1a0a0b5196331867754
 Patch0:		%{name}-nls-domains.patch
+Patch1:		%{name}-format.patch
 URL:		http://www.ggzgamingzone.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -31,6 +32,7 @@ Ten pakiet to klient GGZ dla środowiska GNOME.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal} -I m4 -I m4/ggz

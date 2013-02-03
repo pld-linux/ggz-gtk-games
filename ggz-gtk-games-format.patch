@@ -1,0 +1,74 @@
+--- ggz-gtk-games-0.0.14.1/common/ggz_gtk.c.orig	2008-01-05 19:59:42.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/common/ggz_gtk.c	2013-02-03 08:15:42.901064436 +0100
+@@ -73,8 +73,7 @@ GGZMod *init_ggz_gtk(GtkWindow * main_wi
+ 	GGZMod *mod;
+ 
+ 	if (!ggzmod_is_ggz_mode()) {
+-		printf(_("This program should only be run from within GGZ."));
+-		printf("\n");
++		puts(_("This program should only be run from within GGZ."));
+ 		exit(1);
+ 	}
+ 
+--- ggz-gtk-games-0.0.14.1/dots/game.c.orig	2008-01-05 19:59:50.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/dots/game.c	2013-02-03 08:21:46.257849136 +0100
+@@ -219,7 +219,7 @@ void board_handle_click(GtkWidget * widg
+ 		if (ggz_write_int(game.fd, DOTS_SND_MOVE_V) < 0
+ 		    || ggz_write_char(game.fd, line_x) < 0
+ 		    || ggz_write_char(game.fd, top) < 0) {
+-			ggz_error_msg(_("Lost server connection"));
++			ggz_error_msg("%s", _("Lost server connection"));
+ 			exit(1);
+ 		}
+ 	} else {
+@@ -244,7 +244,7 @@ void board_handle_click(GtkWidget * widg
+ 		if (ggz_write_int(game.fd, DOTS_SND_MOVE_H) < 0
+ 		    || ggz_write_char(game.fd, left) < 0
+ 		    || ggz_write_char(game.fd, line_y) < 0) {
+-			ggz_error_msg(_("Lost server connection"));
++			ggz_error_msg("%s", _("Lost server connection"));
+ 			exit(1);
+ 		}
+ 	}
+--- ggz-gtk-games-0.0.14.1/dots/main.c.orig	2013-02-02 22:43:12.146613317 +0100
++++ ggz-gtk-games-0.0.14.1/dots/main.c	2013-02-03 08:22:08.785557229 +0100
+@@ -360,7 +360,7 @@ static int get_move_status(void)
+ 	}
+ 
+ 	if (status < 0)
+-		ggz_error_msg(_("Client cheater!"));
++		ggz_error_msg("%s", _("Client cheater!"));
+ 
+ 	return (int)status;
+ }
+--- ggz-gtk-games-0.0.14.1/ggzcards/game.c.orig	2008-01-05 19:59:47.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/ggzcards/game.c	2013-02-03 08:22:57.504476107 +0100
+@@ -289,7 +289,7 @@ void game_handle_gameover(int num_winner
+ 
+ 	/* handle different cases */
+ 	if (num_winners == 0)
+-		snprintf(msg, sizeof(msg), _("There was no winner."));
++		snprintf(msg, sizeof(msg), "%s", _("There was no winner."));
+ 	else {
+ 		int i;
+ 		for (i = 0; i < num_winners; i++) {
+@@ -306,7 +306,7 @@ void game_handle_gameover(int num_winner
+ 				 sizeof(msg) - strlen(msg), fmt,
+ 				 ggzcards.players[winners[i]].name);
+ 		}
+-		snprintf(msg + strlen(msg), sizeof(msg) - strlen(msg),
++		snprintf(msg + strlen(msg), sizeof(msg) - strlen(msg), "%s",
+ 			 _("won the game."));
+ 	}
+ 
+--- ggz-gtk-games-0.0.14.1/spades/gtk_io.c.orig	2008-01-05 19:59:38.000000000 +0100
++++ ggz-gtk-games-0.0.14.1/spades/gtk_io.c	2013-02-03 08:23:39.799764696 +0100
+@@ -430,7 +430,7 @@ void DisplayScores(void)
+ 						    gameState.bids[i + 2]);
+ 			}
+ 		} else {
+-			buf = g_strdup_printf(_("  Bid:  "));
++			buf = g_strdup_printf("%s", _("  Bid:  "));
+ 		}
+ 
+ 		gtk_label_set_text(GTK_LABEL(playArea->bids[i]), buf);
